@@ -1,0 +1,481 @@
+/* TUDO */
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: hsl(31, 51%, 86%);
+    height: 100%;
+}
+
+header{
+    margin: 0;
+    padding: 0;
+}
+
+.image:hover{
+    transform: scale(1.1); /* Aumenta a imagem */
+    z-index: 10; /* Move a imagem para frente no eixo Z */
+    transition: transform 0.4s ease, z-index 0s; /* Transição suave e imediata para o z-index */
+}
+
+.image{
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* INICIO E MENU */
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #40534d;
+    height: 8vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Fica acima dos outros elementos */
+}
+
+.inicio{
+    background: url("capa.png") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+h1{
+    font-family: "Playfair Display", serif;
+    letter-spacing: 4px;
+
+}
+
+h2.titulo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;  
+    font-size: 100px;  
+    text-align: center;
+    letter-spacing: 10px; 
+    font-weight: 100;
+    font-style: italic;
+        
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px){
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 40vw;
+        height: 92vh;
+        background-color: #40534d;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+    .nav-list li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+   from{
+    opacity: 0;
+    transform: translateX(50px);
+   } 
+   to{
+    opacity: 1;
+    transform: translateX(0);
+   }
+}
+
+.mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.bottom-header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.bottom-header nav ul li a{
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+.drop-hover{
+    position: relative;
+    z-index: 1100;
+}
+
+.drop-hover1{
+    position: relative;
+    z-index: 1100;
+}
+
+.drop-hover .drop, .drop-hover1 .drop{
+    position: absolute;
+    background-color: #40534d;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .8s;
+    top: 100%;
+}
+
+.drop-hover .drop a, .drop-hover1 .drop a{
+    padding: 20px;
+}
+
+.drop-hover:hover .drop{
+    height: 480px;
+}
+
+.drop-hover1:hover .drop{
+    height: 240px;
+}
+
+
+
+/* QUEM SÃO */
+.xavantes{
+    padding: 80px;
+    background-color: #40534d;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+
+.xavantes .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.xavantes .imagem{
+    display: flex;
+}
+
+.xavantes .imagem img:nth-child(1) {
+    width: 600px;
+    height: auto;
+    padding-right: 20px;
+    padding-left: 120px;
+    z-index: 1;
+}
+
+.xavantes .imagem img:nth-child(2) {
+    height: 500px;
+    position: relative;
+    top: -60px;
+    left: -60px;
+    z-index: 2;
+}
+
+
+/* LOCALIZAÇÃO */
+.localizacao{
+    padding: 80px;
+    background-color: #40534d;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+
+.localizacao .imagem img:first-child{
+    width: 500px;
+    padding-left: 10px;
+    padding-right: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.localizacao .imagem img:last-child{
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    top: 1360px;
+    left: 40px;
+}
+
+.localizacao .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+
+/* LÍNGUA */
+.lingua{
+    background: linear-gradient(#40534d, #687b69);
+    padding: 80px;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+
+.lingua .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.lingua .imagem img:first-child{
+    width: 500px;
+    padding-right: 10px;
+    padding-left: 80px;
+    position: relative;
+    z-index: 2;
+}
+
+.lingua .imagem img:last-child{
+    width: 500px;
+    position: relative;
+    z-index: 1;
+    top: -50px;
+    left: -20px;
+}
+
+
+/* HISTÓRIA */
+.historia{
+    background-color:#687b69;
+    padding: 70px;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.historia .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+
+/* CULTURA */
+.cultura{
+    background-color:#687b69;
+    padding: 80px;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+    text-align: center;
+}
+
+.cultura .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.cultura .imagem img:first-child{
+    width: 500px;
+    padding-right: 10px;
+    padding-left: 80px;
+    z-index: 1;
+}
+
+.cultura .imagem img:last-child{
+    width: 500px;
+    position: relative;
+    z-index: 2;
+    top: -60px;
+    left: 100px;
+}
+
+
+/* IMPORTÂNCIA */
+.importancia{
+    background: linear-gradient(#687b69, #8ba48c);
+    padding: 80px;
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+
+.importancia .titulo{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.importancia .paragrafos{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.import1{
+    display: flex;
+    padding-top: 120px;
+}
+
+.import1 img{
+    width: 300px;
+    padding-right: 120px;
+}
+
+.import2{
+    display: flex;
+    padding-top: 80px;
+}
+
+.import2 img{
+    width: 300px;
+    padding-left: 120px;
+    padding-right: 40px;
+}
+
+.import3{
+    display: flex;
+    padding-top: 80px;
+}
+
+.import3 img{
+    width: 300px;
+    padding-right: 120px;
+}
+
+.import4{
+    display: flex;
+    padding-top: 80px;
+}
+
+.import4 img{
+    width: 300px;
+    padding-left: 120px;
+    padding-right: 40px;
+}
+
+
+/* DESAFIOS */
+.desafios{
+    padding: 80px;
+    background: linear-gradient(#8ba48c, #eddbc8);
+    display: flex;
+    gap: 40px;
+    color: #fff;
+}
+
+.desafios .titulo{
+    padding-bottom: 40px;
+    font-size: 40px;
+}
+
+.desafios .imagem {
+    position: relative;
+}
+
+.desafios .imagem img:first-child {
+    height: 500px;
+    padding-right: 20px;
+    padding-left: 120px;
+    position: relative;
+    z-index: 2;
+}
+
+.desafios .imagem img:last-child{
+    height: 500px;
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: 60px;
+}
+
+
+/*VÍDEO*/
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    padding-top: 80px;
+    padding-bottom: 0;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+  }
+
+  
+  
